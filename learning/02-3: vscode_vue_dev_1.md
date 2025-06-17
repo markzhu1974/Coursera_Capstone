@@ -7,6 +7,10 @@
 2. **创建项目**（使用 Vite，推荐方式）：
    ```bash
    npm create vite@latest vue3-dashboard --template vue
+
+   Select a framework: 选择Vue
+   Select a variant: 选JavaScript
+
    ```
 3. **进入项目目录**：
    ```bash
@@ -15,7 +19,12 @@
 4. **安装依赖**：
    ```bash
    npm install
+   npm run dev
    ```
+   启动web服务，用浏览器打开所显示的网页链接，能正常
+   然后Ctrl-C 停止web服务
+   
+
 5. **安装额外依赖**（图表库和 axios）：
    ```bash
    npm install echarts axios
@@ -51,7 +60,7 @@
 ---
 
 ### 第三步：创建数据看板组件
-在 `src/components/Dashboard.vue` 中实现：
+创建文件 `src/components/Dashboard.vue` ，内容：
 
 ```vue
 <template>
@@ -173,7 +182,7 @@ onMounted(() => {
 ---
 
 ### 第四步：创建指标卡片组件
-在 `src/components/MetricCard.vue` 中：
+创建文件 `src/components/MetricCard.vue` ，其中内容：
 
 ```vue
 <template>
