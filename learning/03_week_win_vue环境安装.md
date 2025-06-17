@@ -53,7 +53,7 @@ npm install -g npm@latest
 npm create vite@latest
 ```
 按提示操作：
-1. 输入项目名称（如 `vue3-demo`）
+1. 输入项目名称（如 `vue3-vite-demo`）
 2. 选择框架：**Vue**
 3. 选择变体：**JavaScript** 或 **TypeScript**
 
@@ -74,21 +74,17 @@ cd vue3-demo
 ### 步骤 2：安装依赖
 ```bash
 npm install
-# 或使用 yarn（需先安装：npm install -g yarn）
-yarn install
 ```
 
 ### 步骤 3：启动开发服务器
 ```bash
-npm run dev
-# 或
-yarn dev
+npm run serv
 ```
 
 ### 步骤 4：访问项目
 在浏览器中打开：
 ```
-http://localhost:5173
+http://localhost:8080
 ```
 （Vite 默认端口为 5173，Vue CLI 默认为 8080）
 
