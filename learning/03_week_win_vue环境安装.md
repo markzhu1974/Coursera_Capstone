@@ -92,10 +92,8 @@ http://localhost:8080
 
 1. 下载安装 [VS Code](https://code.visualstudio.com/)
 2. 打开扩展市场（Ctrl + Shift + X），搜索安装：
-   - **Volar**（Vue 官方语言支持）
-   - **ESLint**（代码质量检查）
-   - **Prettier**（代码格式化）
-   - **Vue Language Features (Volar)**（Vue 3 语法支持）
+   - 1) Vue - Official 插件（必备）
+   - 2）Vue 3 Snippets 插件（必备）
 
 ## 常见问题解决
 
