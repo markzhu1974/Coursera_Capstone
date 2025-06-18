@@ -8,11 +8,11 @@
 
 ### https://www.runoob.com/flask/flask-tutorial.html
 
-## FastAPI教程
+## FastAPI教程 （类似Flask的更高级的后端框架。如果时间充裕可以进阶学习）
 
 ### https://www.runoob.com/fastapi/fastapi-tutorial.html
 
+## MySQL教程
 
-## MongoDB教程
+### https://www.runoob.com/mysql/mysql-tutorial.html
 
-### https://www.runoob.com/mongodb/mongodb-tutorial.html
