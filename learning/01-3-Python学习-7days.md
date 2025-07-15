@@ -59,14 +59,16 @@ https://www.runoob.com/python3/python3-examples.html
 ### 学习Python实现的Web Server代码以及处理HTML的表单请求 
 
 下载并解压：
+https://github.com/markzhu1974/Coursera_Capstone/blob/master/learning/01-3a-pyweb.zip
 
+运行方式：
 - 确保安装了Python 3.x
 - 打开命令行/终端
 - 进入解压后的程序文件夹
 - 运行web服务器：python server.py
 - 在浏览器中访问：http://localhost:8000
 
-- 这个包包含了完整的静态网站服务器实现，包括：
+这个包包含了完整的静态网站服务器实现，包括：
 - 主页(index.html)
 - 联系表单(form.html)
 - 响应页面(response.html)
