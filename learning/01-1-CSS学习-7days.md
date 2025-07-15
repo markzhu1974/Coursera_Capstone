@@ -1,7 +1,8 @@
 # CSS学习计划
 
-## Day 1 CSS基础
+## Day 1 CSS基础 
 🔗 [CSS教程](https://www.runoob.com/css/css-tutorial.html)  
+学习以下内容
 - CSS简介  
 - CSS语法  
 - CSS Id和Class选择器  
