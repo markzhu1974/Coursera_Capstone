@@ -45,13 +45,33 @@ https://www.runoob.com/python3/python3-tutorial.html
 - Python3 标准库概览
 
 ## Day 7:
-- Python3 实例 
+
+### Python3 实例 
 https://www.runoob.com/python3/python3-examples.html
 
-学习三个程序（读懂程序，拷贝到VSCode中运行）：
+学习下面几个程序（读懂程序，拷贝到VSCode中运行）：
 
 - Python ASCII码与字符相互转换
 - Python 获取昨天日期
 - Python 冒泡排序
 - Python 简单的银行系统
+
+### 学习Python实现的Web Server代码以及处理HTML的表单请求 
+
+下载并解压：
+
+- 确保安装了Python 3.x
+- 打开命令行/终端
+- 进入解压后的程序文件夹
+- 运行web服务器：python server.py
+- 在浏览器中访问：http://localhost:8000
+
+- 这个包包含了完整的静态网站服务器实现，包括：
+- 主页(index.html)
+- 联系表单(form.html)
+- 响应页面(response.html)
+- 关于页面(about.html)
+- CSS样式表
+- 图片资源
+- 完整的Python HTTP服务器代码
 
