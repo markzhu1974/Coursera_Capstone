@@ -1,4 +1,4 @@
-# 第2周课程计划：Vue3和Flask/FastAPI开发
+# 第2阶段课程计划：Vue3和Flask/FastAPI开发
 
 ## Vue3教程
 
