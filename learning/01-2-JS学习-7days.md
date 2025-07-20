@@ -5,7 +5,7 @@
 
 学习以下内容：
 - JavaScript简介  
-- JavaScript语法  
+- JavaScript用法  
 - JavaScript VScode  
 - JavaScript Chrome中运行  
 
