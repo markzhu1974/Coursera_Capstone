@@ -27,8 +27,8 @@
 |---------------------------|--------|--------------|
 | JavaScript 循环          | 7      | 35           |
 | JavaScript 事件           | 2      | 10           |
-| JavaScript 错误处理       | 3      | 15           |
-| 高级 JavaScript 实例     | 8      | 40           |
+| JavaScript 错误处理（不看实例解析）       | 3      | 15           |
+| 高级 JavaScript 实例     | 8      | 80           |
 
 ## Day 4 JavaScript对象实例
 🔗 [JavaScript对象示例](https://www.runoob.com/js/js-ex-objects.html)  
