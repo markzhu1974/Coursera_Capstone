@@ -2,7 +2,9 @@
 
 ## Vue3教程
 
-### https://www.runoob.com/vue3/vue3-tutorial.html
+### https://www.bilibili.com/video/BV1LQMLzGE85?spm_id_from=333.788.videopod.episodes&vd_source=3a2374dd1553753b54037582094368d0
+
+### 参考资料 https://www.runoob.com/vue3/vue3-tutorial.html
 
 ## Flask教程
 
