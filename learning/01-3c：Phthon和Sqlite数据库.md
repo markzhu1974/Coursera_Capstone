@@ -31,7 +31,7 @@
 | major  | TEXT    | 专业    |
 
 ---
-## 表的数据的示例
+student 表的数据示例
 
 | id | name | gender | age | major |
 | -- | ---- | ------ | --- | ----- |
