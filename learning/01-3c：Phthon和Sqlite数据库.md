@@ -153,19 +153,31 @@ DELETE FROM student WHERE id = 3;
 
 Python 示例：
 
-```python
+import sqlite3
+
 conn = sqlite3.connect('student.db')
 try:
     cursor = conn.cursor()
+    # 插入三条学生信息
     cursor.execute("INSERT INTO student (name, gender, age, major) VALUES (?, ?, ?, ?)",
                    ('李四', '女', 22, '电子工程'))
+    cursor.execute("INSERT INTO student (name, gender, age, major) VALUES (?, ?, ?, ?)",
+                   ('王五', '男', 21, '计算机科学'))
+    cursor.execute("INSERT INTO student (name, gender, age, major) VALUES (?, ?, ?, ?)",
+                   ('赵六', '女', 23, '机械工程'))
+
+    # 如果三条都成功，提交事务
     conn.commit()
+    print("三条记录插入成功！")
+
 except Exception as e:
+    # 如果有任何一条失败，回滚事务
     conn.rollback()
-    raise
+    print("插入失败，事务已回滚：", e)
+
 finally:
     conn.close()
-```
+
 
 注意：使用参数化查询（上例中的 `?` 占位符）可以 **防止 SQL 注入**，并正确处理字符串转义。
 
