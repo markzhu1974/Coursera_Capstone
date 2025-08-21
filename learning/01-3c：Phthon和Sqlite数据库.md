@@ -292,7 +292,7 @@ def list_students():
    UPDATE student SET major = '自动化' WHERE id = 2;
    ```
 
-3. 在 Python 中如何避免 SQL 注入？写出插入语句的正确写法（参数化）。
+3. 在 Python 中如何避免 SQL 注入(一种黑客攻击的手段)？写出插入语句的正确写法（参数化）。
    答案示例见上面的 `add_student` 函数（使用 `?` 占位符）。
 
 ---
