@@ -153,6 +153,7 @@ DELETE FROM student WHERE id = 3;
 
 Python 示例：
 
+```python
 import sqlite3
 
 conn = sqlite3.connect('student.db')
@@ -177,7 +178,7 @@ except Exception as e:
 
 finally:
     conn.close()
-
+```
 
 注意：使用参数化查询（上例中的 `?` 占位符）可以 **防止 SQL 注入**，并正确处理字符串转义。
 
