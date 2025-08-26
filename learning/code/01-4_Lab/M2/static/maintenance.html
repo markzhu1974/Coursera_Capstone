@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>维修维护记录管理</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>维修维护记录管理</h1>
+            <nav>
+                <a href="index.html">返回设备列表</a>
+            </nav>
+        </header>
+        
+        <main>
+            <!-- 查询区域 -->
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="输入设备编号">
+                <button onclick="searchRecords()">查询</button>
+                <button onclick="resetSearch()">重置</button>
+            </div>
+            
+            <!-- 维修记录表格 -->
+            <table id="maintenanceTable">
+                <thead>
+                    <tr>
+                        <th>设备编号</th>
+                        <th>维护日期</th>
+                        <th>故障代码</th>
+                        <th>故障现象</th>
+                        <th>维修人员</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 记录将通过JavaScript动态加载 -->
+                </tbody>
+            </table>
+            
+            <!-- 分页控制 -->
+            <div class="pagination">
+                <button id="prevPage" disabled>上一页</button>
+                <span id="pageInfo">第 1 页</span>
+                <button id="nextPage" disabled>下一页</button>
+            </div>
+            
+            <!-- 新增记录按钮 -->
+            <button class="add-button" onclick="showAddForm()">新增维修记录</button>
+            
+            <!-- 新增记录表单 (初始隐藏) -->
+            <div id="addForm" class="form-popup" style="display:none;">
+                <h2>新增维修记录</h2>
+                <form onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="device_id">设备编号:</label>
+                        <input type="text" id="device_id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="maintenance_date">维护日期:</label>
+                        <input type="date" id="maintenance_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fault_code">故障代码:</label>
+                        <input type="text" id="fault_code">
+                    </div>
+                    <div class="form-group">
+                        <label for="fault_phenomenon">故障现象:</label>
+                        <textarea id="fault_phenomenon"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="maintenance_personnel">维修人员:</label>
+                        <input type="text" id="maintenance_personnel">
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit">保存</button>
+                        <button type="button" onclick="hideAddForm()">取消</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    
+    <script src="maintenance.js"></script>
+</body>
+</html>

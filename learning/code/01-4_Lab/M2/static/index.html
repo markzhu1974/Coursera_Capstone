@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工业机器人信息管理系统</title>
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>工业机器人信息管理系统</h1>
+        </header>
+        
+        <main>
+            <!-- 查询区域 -->
+            <section class="search-section">
+                <h2>查询条件</h2>
+                <div class="search-form">
+                    <!-- 搜索字段区域 -->
+                    <div class="search-fields">
+                        <div class="form-field">
+                            <label for="searchDeviceId">设备编号</label>
+                            <input type="text" id="searchDeviceId" placeholder="设备编号">
+                        </div>
+                        <div class="form-field">
+                            <label for="searchModel">型号</label>
+                            <input type="text" id="searchModel" placeholder="型号">
+                        </div>
+                        <div class="form-field">
+                            <label for="searchManufacturer">生产厂家</label>
+                            <input type="text" id="searchManufacturer" placeholder="生产厂家">
+                        </div>
+                        <div class="form-field">
+                            <label for="searchLocation">位置</label>
+                            <input type="text" id="searchLocation" placeholder="位置">
+                        </div>
+                    </div>
+                    
+                    <!-- 操作按钮区域 -->
+                    <div class="search-actions">
+                        <button onclick="searchRobots()">查询</button>
+                        <button onclick="clearSearch()" class="secondary">清空</button>
+                        <button onclick="loadRobots()" class="secondary">显示全部</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 机器人列表 -->
+            <section class="robot-list">
+                <h2>机器人列表</h2>
+                <table id="robotTable">
+                    <thead>
+                        <tr>
+                            <th>选择</th>
+                            <th>设备编号</th>
+                            <th>型号</th>
+                            <th>生产厂家</th>
+                            <th>位置</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 机器人数据将通过JavaScript动态填充 -->
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- 操作按钮 -->
+            <section class="action-buttons">
+                <button onclick="addRobot()">新增</button>
+                <button onclick="editRobot()">修改</button>
+                <button onclick="deleteRobot()">删除</button>
+                <button onclick="viewMaintenance()">查看维修记录</button>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- 新增机器人模态窗口 -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddModal()">&times;</span>
+            <h2>新增机器人</h2>
+            <form id="addForm" onsubmit="submitAddForm(event)">
+                <div class="form-group">
+                    <label for="device_id">设备编号:</label>
+                    <input type="text" id="device_id" name="device_id" required>
+                </div>
+                <div class="form-group">
+                    <label for="model">型号:</label>
+                    <input type="text" id="model" name="model" required>
+                </div>
+                <div class="form-group">
+                    <label for="manufacturer">生产厂家:</label>
+                    <input type="text" id="manufacturer" name="manufacturer" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">位置:</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit">提交</button>
+                    <button type="button" onclick="closeAddModal()">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 编辑机器人模态窗口 -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>编辑机器人信息</h2>
+            <form id="editForm" onsubmit="submitEditForm(event)">
+                <input type="hidden" id="edit_id" name="id">
+                <div class="form-group">
+                    <label for="edit_device_id">设备编号:</label>
+                    <input type="text" id="edit_device_id" name="device_id" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit_model">型号:</label>
+                    <input type="text" id="edit_model" name="model" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit_manufacturer">生产厂家:</label>
+                    <input type="text" id="edit_manufacturer" name="manufacturer" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit_location">位置:</label>
+                    <input type="text" id="edit_location" name="location" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit">保存</button>
+                    <button type="button" onclick="closeEditModal()">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- 引入JavaScript文件 -->
+    <script src="script.js"></script>
+</body>
+</html>

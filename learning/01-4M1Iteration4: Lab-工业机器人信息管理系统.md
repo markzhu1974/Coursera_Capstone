@@ -453,3 +453,7 @@ function getSelectedRobots() {
 现在工业机器人信息管理系统的第一个里程碑已经完成！系统支持完整的增删改查功能。
 
 请测试所有功能，确保一切正常工作，然后我们可以继续Milestone 2的内容。
+
+------
+
+代码参考 [code/01-4_Lab/M1Iteration4](code/01-4_Lab/M1Iteration4)
