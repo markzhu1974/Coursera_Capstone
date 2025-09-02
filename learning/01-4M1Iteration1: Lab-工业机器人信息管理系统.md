@@ -183,12 +183,12 @@ if __name__ == '__main__':
     database.init_database()
     database.insert_sample_data()
     
-    # 创建TCP服务器实例
-    with socketserver.TCPServer(("", PORT), RobotHandler) as httpd:
-        print(f"服务器运行在端口 {PORT}")
-        print("打开浏览器访问: http://localhost:8000/")
-        # 启动服务器，持续处理请求
-        httpd.serve_forever()
+    # 创建 HTTPServer
+    server = http.server.HTTPServer(('', PORT), RobotHandler)
+    print(f"服务器运行在端口 {PORT}")
+    print("打开浏览器访问: http://localhost:8000/")
+    # 启动服务器，持续处理请求
+    server.serve_forever()
 ```
 
 ### 第四步：创建前端页面
@@ -409,51 +409,28 @@ function loadRobots() {
         });
 }
 
-// 填充表格数据函数
+// 填充表格数据函数（HTML字符串拼接版）
 function populateTable(robots) {
     // 获取表格tbody元素
     const tbody = document.querySelector('#robotTable tbody');
     // 清空现有内容
     tbody.innerHTML = '';
     
-    // 遍历机器人数据
-    robots.forEach(robot => {
-        // 创建表格行
-        const row = document.createElement('tr');
-        
-        // 创建选择复选框单元格
-        const selectCell = document.createElement('td');
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.dataset.id = robot.id;  // 存储机器人ID
-        selectCell.appendChild(checkbox);
-        
-        // 创建设备编号单元格
-        const deviceIdCell = document.createElement('td');
-        deviceIdCell.textContent = robot.device_id;
-        
-        // 创建型号单元格
-        const modelCell = document.createElement('td');
-        modelCell.textContent = robot.model;
-        
-        // 创建生产厂家单元格
-        const manufacturerCell = document.createElement('td');
-        manufacturerCell.textContent = robot.manufacturer;
-        
-        // 创建位置单元格
-        const locationCell = document.createElement('td');
-        locationCell.textContent = robot.location;
-        
-        // 将所有单元格添加到行
-        row.appendChild(selectCell);
-        row.appendChild(deviceIdCell);
-        row.appendChild(modelCell);
-        row.appendChild(manufacturerCell);
-        row.appendChild(locationCell);
-        
-        // 将行添加到表格
-        tbody.appendChild(row);
-    });
+    // 用 map 拼接每一行
+    let rows = robots.map(robot => {
+        return `
+            <tr>
+                <td><input type="checkbox" data-id="${robot.id}"></td>
+                <td>${robot.device_id}</td>
+                <td>${robot.model}</td>
+                <td>${robot.manufacturer}</td>
+                <td>${robot.location}</td>
+            </tr>
+        `;
+    }).join('');
+
+    // 一次性写入表格
+    tbody.innerHTML = rows;
 }
 
 // 查询机器人函数
